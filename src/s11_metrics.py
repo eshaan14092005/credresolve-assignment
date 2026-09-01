@@ -1,6 +1,6 @@
 import pandas as pd, itertools
 
-g = pd.read_parquet("output/golden_account_month.parquet")
+g = pd.read_parquet("golden_account_month.parquet")
 g["month"] = g.month.astype("period[M]")
 CR = 1e7
 

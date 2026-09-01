@@ -32,14 +32,14 @@ recovery_reconciles_to_source   PASS 126.85 Cr
 
 | Deliverable | Location |
 |---|---|
-| Executive memo | `output/executive_memo.md` |
-| Executive dashboard | `output/executive_dashboard.html` (open in a browser) |
-| Data quality report | `output/data_quality_report.md` |
+| Executive memo | `executive_memo.md` |
+| Executive dashboard | `executive_dashboard.html` (open in a browser) |
+| Data quality report | `data_quality_report.md` |
 | Analysis notebook | `notebooks/collections_analysis.ipynb` |
 | SQL repository | `sql/` |
-| Golden dataset | `output/golden_account_month.parquet`, built by `sql/02_golden.sql` |
-| Architecture diagram and production design | `output/part5_production_design.md` |
-| Decision log | `output/decisions_log.md` |
+| Golden dataset | `golden_account_month.parquet`, built by `sql/02_golden.sql` |
+| Architecture diagram and production design | `architecture_and_production_design.md` |
+| Decision log | `decisions_log.md` |
 
 ## Repository layout
 
@@ -69,7 +69,14 @@ src/
   s15_did.py             difference-in-differences with placebo cuts
 
 notebooks/              the reasoning narrative
-output/                 deliverables
+
+README.md
+executive_memo.md
+executive_dashboard.html
+data_quality_report.md
+architecture_and_production_design.md
+decisions_log.md
+golden_account_month.parquet
 data/raw/               source CSVs (not committed)
 ```
 
@@ -77,7 +84,7 @@ data/raw/               source CSVs (not committed)
 
 The SQL repository is the source of truth. The Python scripts are the forensic investigations that justify each cleaning rule, and the notebook is the narrative that connects them. The golden dataset was originally built in pandas and later migrated to SQL; the two implementations were verified identical across all 210,000 rows and 13 measures before the pandas version was retired.
 
-Every cleaning rule in `01_clean.sql` carries a decision ID in a comment. Those resolve to `output/decisions_log.md`, which records the rule, the evidence behind it, and its measured impact. To trace an unexpected number: metric → golden column → clean rule → decision ID → the forensic test that produced it.
+Every cleaning rule in `01_clean.sql` carries a decision ID in a comment. Those resolve to `decisions_log.md`, which records the rule, the evidence behind it, and its measured impact. To trace an unexpected number: metric → golden column → clean rule → decision ID → the forensic test that produced it.
 
 ## Things worth reading first
 

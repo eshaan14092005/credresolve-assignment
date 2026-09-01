@@ -7,7 +7,7 @@ Closes the remaining analysis gaps against the brief:
 import pandas as pd, numpy as np
 
 RAW, CR = "data/raw", 1e7
-g = pd.read_parquet("output/golden_account_month.parquet")
+g = pd.read_parquet("golden_account_month.parquet")
 
 acct = g.groupby("account_id").agg(
     recovered=("amount_recovered", "sum"),

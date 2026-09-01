@@ -1,6 +1,6 @@
 import pandas as pd, numpy as np
 
-g = pd.read_parquet("output/golden_account_month.parquet")
+g = pd.read_parquet("golden_account_month.parquet")
 CR = 1e7
 
 acct = g.groupby("account_id").agg(
