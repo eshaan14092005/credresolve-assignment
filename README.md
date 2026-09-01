@@ -32,9 +32,9 @@ recovery_reconciles_to_source   PASS 126.85 Cr
 
 | Deliverable | Location |
 |---|---|
-| Executive memo | `pdf/executive_memo.pdf` |
-| Executive dashboard | `executive_dashboard.html` (open in a browser) |
-| Data quality report | `pdf/data_quality_report.pdf` |
+| Executive memo | `deliverables/pdf/executive_memo.pdf` |
+| Executive dashboard | `deliverables/executive_dashboard.html` (open in a browser) |
+| Data quality report | `deliverables/pdf/data_quality_report.pdf` |
 | Analysis notebook | `notebooks/collections_analysis.ipynb` |
 | SQL repository | `sql/` |
 | Golden dataset | `golden_account_month.parquet`, built by `sql/02_golden.sql` |
