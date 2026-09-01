@@ -1,0 +1,11 @@
+table,raw,kept,rejected,reason
+accounts,30000,30000,0,"spine, no cleaning required"
+payments,25500,25000,500,"D3/D5 dedup on payment_id, prefer non-null reference"
+"payments (SUCCESS, Jan-Jul)",24086,16918,7168,D2 window + SUCCESS only
+calls,91350,90079,1271,exact full-row dedup
+call_attempts,120000,120000,0,exact full-row dedup
+call_dispositions,35000,35000,0,exact full-row dedup
+whatsapp_events,60600,60000,600,exact full-row dedup
+sms_events,45000,45000,0,exact full-row dedup
+field_visits,25000,25000,0,exact full-row dedup
+daily_targeting,45000,43399,1601,dedup + window
