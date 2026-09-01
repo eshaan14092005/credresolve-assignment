@@ -1,0 +1,94 @@
+<svg width="100%" viewBox="0 0 940 470" xmlns="http://www.w3.org/2000/svg" role="img" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Production analytics architecture</title>
+<style>
+.bx{fill:#fff;stroke:#C9D2DA;stroke-width:1}
+.gray{fill:#F2F4F6}.pur{fill:#F0EEF7}.teal{fill:#EAF2F2}.cor{fill:#FBF0F1}.amb{fill:#FAF4E8}
+.th{font-size:12px;font-weight:600;fill:#12212E}
+.ts{font-size:10px;fill:#5B6B7B}
+.arr{stroke:#5B6B7B;stroke-width:1.4;fill:none}
+.hd{font-size:15px;font-weight:600;fill:#12212E}
+</style>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5B6B7B" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<rect width="940" height="470" fill="#fff"/>
+<text class="hd" x="20" y="26">Collections analytics — production architecture</text>
+<text class="ts" x="20" y="46">Every layer reads only from the layer above it. Contract failure blocks the build.</text>
+
+<rect class="bx gray" x="20" y="72" width="128" height="86" rx="8"/>
+<text class="th" x="84" y="98" text-anchor="middle">SOURCES</text>
+<text class="ts" x="84" y="118" text-anchor="middle">dialer · CRM</text>
+<text class="ts" x="84" y="133" text-anchor="middle">payments · WhatsApp</text>
+<text class="ts" x="84" y="148" text-anchor="middle">SMS · field app</text>
+
+<rect class="bx gray" x="176" y="72" width="118" height="86" rx="8"/>
+<text class="th" x="235" y="98" text-anchor="middle">RAW</text>
+<text class="ts" x="235" y="118" text-anchor="middle">append-only</text>
+<text class="ts" x="235" y="133" text-anchor="middle">immutable</text>
+<text class="ts" x="235" y="148" text-anchor="middle">by ingest date</text>
+
+<rect class="bx pur" x="322" y="72" width="118" height="86" rx="8"/>
+<text class="th" x="381" y="98" text-anchor="middle">STAGING</text>
+<text class="ts" x="381" y="118" text-anchor="middle">typed</text>
+<text class="ts" x="381" y="133" text-anchor="middle">contracts enforced</text>
+<text class="ts" x="381" y="148" text-anchor="middle">view</text>
+
+<rect class="bx pur" x="468" y="72" width="118" height="86" rx="8"/>
+<text class="th" x="527" y="98" text-anchor="middle">CLEAN</text>
+<text class="ts" x="527" y="118" text-anchor="middle">dedup · entity res</text>
+<text class="ts" x="527" y="133" text-anchor="middle">D1–D16 rules</text>
+<text class="ts" x="527" y="148" text-anchor="middle">view</text>
+
+<rect class="bx teal" x="614" y="72" width="118" height="86" rx="8"/>
+<text class="th" x="673" y="98" text-anchor="middle">GOLDEN</text>
+<text class="ts" x="673" y="118" text-anchor="middle">account × month</text>
+<text class="ts" x="673" y="133" text-anchor="middle">210,000 rows</text>
+<text class="ts" x="673" y="148" text-anchor="middle">table</text>
+
+<rect class="bx teal" x="760" y="72" width="118" height="86" rx="8"/>
+<text class="th" x="819" y="98" text-anchor="middle">FEATURE</text>
+<text class="ts" x="819" y="118" text-anchor="middle">cohorts · bands</text>
+<text class="ts" x="819" y="133" text-anchor="middle">derived attrs</text>
+<text class="ts" x="819" y="148" text-anchor="middle">table</text>
+
+<line x1="150" y1="115" x2="172" y2="115" class="arr" marker-end="url(#ar)"/>
+<line x1="296" y1="115" x2="318" y2="115" class="arr" marker-end="url(#ar)"/>
+<line x1="442" y1="115" x2="464" y2="115" class="arr" marker-end="url(#ar)"/>
+<line x1="588" y1="115" x2="610" y2="115" class="arr" marker-end="url(#ar)"/>
+<line x1="734" y1="115" x2="756" y2="115" class="arr" marker-end="url(#ar)"/>
+<path d="M819 160 L819 196 L235 196 L235 232" class="arr" marker-end="url(#ar)"/>
+
+<rect class="bx cor" x="176" y="236" width="230" height="104" rx="8"/>
+<text class="th" x="291" y="262" text-anchor="middle">METRICS — single definition site</text>
+<text class="ts" x="291" y="283" text-anchor="middle">9 definitions, versioned, in SQL</text>
+<text class="ts" x="291" y="300" text-anchor="middle">rate names carry their denominator</text>
+<text class="ts" x="291" y="317" text-anchor="middle">every series published per calendar day</text>
+<text class="ts" x="291" y="334" text-anchor="middle">partial months flagged, never plotted raw</text>
+
+<rect class="bx teal" x="446" y="236" width="150" height="104" rx="8"/>
+<text class="th" x="521" y="268" text-anchor="middle">DASHBOARD</text>
+<text class="ts" x="521" y="291" text-anchor="middle">one screen</text>
+<text class="ts" x="521" y="309" text-anchor="middle">reads metrics only</text>
+<text class="ts" x="521" y="327" text-anchor="middle">never queries golden</text>
+<line x1="410" y1="288" x2="442" y2="288" class="arr" marker-end="url(#ar)"/>
+
+<rect class="bx amb" x="636" y="236" width="130" height="46" rx="8"/>
+<text class="ts" x="701" y="255" text-anchor="middle" font-weight="600">CONTRACT CHECKS</text>
+<text class="ts" x="701" y="271" text-anchor="middle">7 assertions · block build</text>
+<rect class="bx amb" x="636" y="294" width="130" height="46" rx="8"/>
+<text class="ts" x="701" y="313" text-anchor="middle" font-weight="600">ANOMALY DETECTION</text>
+<text class="ts" x="701" y="329" text-anchor="middle">rules · z-score · reconcile</text>
+<rect class="bx gray" x="796" y="236" width="120" height="46" rx="8"/>
+<text class="ts" x="856" y="255" text-anchor="middle" font-weight="600">QUARANTINE</text>
+<text class="ts" x="856" y="271" text-anchor="middle">rejected rows</text>
+<rect class="bx gray" x="796" y="294" width="120" height="46" rx="8"/>
+<text class="ts" x="856" y="313" text-anchor="middle" font-weight="600">LATE ARRIVALS</text>
+<text class="ts" x="856" y="329" text-anchor="middle">7-day lookback</text>
+<line x1="632" y1="259" x2="600" y2="259" class="arr" stroke-dasharray="3 3"/>
+<line x1="770" y1="259" x2="792" y2="259" class="arr" stroke-dasharray="3 3"/>
+<line x1="770" y1="317" x2="792" y2="317" class="arr" stroke-dasharray="3 3"/>
+
+<line x1="20" y1="372" x2="916" y2="372" stroke="#C9D2DA" stroke-dasharray="2 4"/>
+<text class="ts" x="20" y="394" font-weight="600">Enforced guarantees</text>
+<text class="ts" x="20" y="414">Reconciliation — golden total must equal cleaned source total (₹126.85 Cr). Any divergence is a pipeline bug by definition.</text>
+<text class="ts" x="20" y="432">Denominator visibility — no rate may be published without its denominator in the column name.</text>
+<text class="ts" x="20" y="450">Calendar normalisation — no month-on-month figure may be published without its per-calendar-day equivalent alongside.</text>
+</svg>

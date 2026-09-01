@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Collections recovery — January to July 2026</title>
+<style>
+:root {
+  --paper:#EDF0F3; --card:#FFFFFF; --ink:#12212E; --mid:#5B6B7B;
+  --hair:#C9D2DA; --quiet:#8A9AA8; --claim:#B0123C;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-variant-numeric:tabular-nums; -webkit-font-smoothing:antialiased;
+  padding:26px 30px 22px;
+}
+.wrap { max-width:1180px; margin:0 auto; }
+
+header { display:flex; justify-content:space-between; align-items:baseline;
+          border-bottom:1px solid var(--hair); padding-bottom:14px; margin-bottom:22px; }
+h1 { font-size:15px; font-weight:600; letter-spacing:-.01em; margin:0; }
+.meta { font-size:12px; color:var(--mid); }
+
+.verdict { font-size:34px; line-height:1.18; font-weight:600;
+            letter-spacing:-.028em; max-width:24ch; margin:0 0 6px; }
+.verdict em { font-style:normal; color:var(--claim); }
+.sub { font-size:14px; line-height:1.5; color:var(--mid); max-width:52ch; margin:0; }
+
+.main { display:grid; grid-template-columns:1.55fr 1fr; gap:26px; margin:26px 0 22px;
+         align-items:start; }
+.panel { background:var(--card); border:1px solid var(--hair); border-radius:3px; padding:16px 18px; }
+.ph { font-size:12px; color:var(--mid); margin:0 0 12px; }
+
+svg.chart { width:100%; height:auto; display:block; }
+.g { stroke:var(--hair); stroke-width:1; }
+.ax { font-size:10px; fill:var(--quiet); font-family:inherit; }
+.actual { fill:none; stroke:var(--ink); stroke-width:2.2; }
+.claim { fill:none; stroke:var(--claim); stroke-width:1.6; stroke-dasharray:5 4; }
+.gapline { stroke:var(--claim); stroke-width:1; stroke-dasharray:2 3; }
+.dot { fill:var(--ink); }
+.note { font-size:11px; fill:var(--claim); font-family:inherit; }
+.note2 { font-size:11px; fill:var(--mid); font-family:inherit; }
+
+.stats { display:flex; flex-direction:column; gap:12px; }
+.stat { background:var(--card); border:1px solid var(--hair); border-radius:3px; padding:14px 16px; }
+.stat .n { font-size:27px; font-weight:600; letter-spacing:-.02em; line-height:1; }
+.stat .l { font-size:12px; color:var(--mid); margin-top:6px; line-height:1.35; }
+
+.strip { display:grid; grid-template-columns:repeat(6,1fr); gap:1px;
+          background:var(--hair); border:1px solid var(--hair); border-radius:3px;
+          overflow:hidden; margin-bottom:20px; }
+.s { background:var(--card); padding:11px 12px 9px; }
+.sl { font-size:11px; color:var(--mid); margin-bottom:7px; }
+.spk { width:100%; height:30px; display:block; }
+.spk polyline { fill:none; stroke:var(--quiet); stroke-width:1.4;
+                 vector-effect:non-scaling-stroke; }
+.sv { font-size:14px; font-weight:600; margin-top:7px; }
+.sd { font-size:11px; font-weight:400; color:var(--quiet); margin-left:6px; }
+
+.foot { display:grid; grid-template-columns:1fr 1fr; gap:26px;
+         border-top:1px solid var(--hair); padding-top:16px; }
+.foot h2 { font-size:12px; color:var(--mid); font-weight:400; margin:0 0 8px; }
+.foot p { font-size:13.5px; line-height:1.55; margin:0 0 8px; max-width:56ch; }
+.foot p:last-child { margin-bottom:0; }
+.foot b { font-weight:600; }
+
+@media (max-width:900px) {
+  .main,.foot { grid-template-columns:1fr; }
+  .strip { grid-template-columns:repeat(2,1fr); }
+  .verdict { font-size:26px; }
+}
+</style></head><body><div class="wrap">
+
+<header>
+  <h1>Collections recovery performance</h1>
+  <div class="meta">January – July 2026 · 7 complete months · 210,000 account-months</div>
+</header>
+
+<p class="verdict">Recovery did not improve. It has been <em>flat for seven months</em>.</p>
+<p class="sub">The reported 11% month-on-month is a single February-to-March comparison.
+March had three more calendar days than February, which accounts for 10.7 of the
+11.0 percentage points.</p>
+
+<div class="main">
+  <div class="panel">
+    <p class="ph">Monthly recovery, ₹ Cr — reported trajectory against actual</p>
+    <svg class="chart" viewBox="0 0 620 300" role="img"
+         aria-label="Actual recovery is flat near 18 crore while the claimed 11 percent monthly trajectory rises to 35 crore by July">
+      <line x1="46" y1="270.0" x2="604" y2="270.0" class="g"/><text x="38" y="273.5" class="ax" text-anchor="end">0</text><line x1="46" y1="207.0" x2="604" y2="207.0" class="g"/><text x="38" y="210.5" class="ax" text-anchor="end">10</text><line x1="46" y1="144.0" x2="604" y2="144.0" class="g"/><text x="38" y="147.5" class="ax" text-anchor="end">20</text><line x1="46" y1="81.0" x2="604" y2="81.0" class="g"/><text x="38" y="84.5" class="ax" text-anchor="end">30</text><line x1="46" y1="18.0" x2="604" y2="18.0" class="g"/><text x="38" y="21.5" class="ax" text-anchor="end">40</text><text x="46.0" y="290" class="ax" text-anchor="middle">Jan</text><text x="139.0" y="290" class="ax" text-anchor="middle">Feb</text><text x="232.0" y="290" class="ax" text-anchor="middle">Mar</text><text x="325.0" y="290" class="ax" text-anchor="middle">Apr</text><text x="418.0" y="290" class="ax" text-anchor="middle">May</text><text x="511.0" y="290" class="ax" text-anchor="middle">Jun</text><text x="604.0" y="290" class="ax" text-anchor="middle">Jul</text>
+      <polyline class="claim" points="46.0,152.1 139.0,139.1 232.0,124.7 325.0,108.7 418.0,91.0 511.0,71.3 604.0,49.4"/>
+      <polyline class="actual" points="46.0,152.1 139.0,162.8 232.0,151.0 325.0,159.7 418.0,153.9 511.0,159.4 604.0,152.1"/>
+      <circle cx="46.0" cy="152.1" r="3" class="dot"/><circle cx="139.0" cy="162.8" r="3" class="dot"/><circle cx="232.0" cy="151.0" r="3" class="dot"/><circle cx="325.0" cy="159.7" r="3" class="dot"/><circle cx="418.0" cy="153.9" r="3" class="dot"/><circle cx="511.0" cy="159.4" r="3" class="dot"/><circle cx="604.0" cy="152.1" r="3" class="dot"/>
+      <path class="gapline" d="M604.0,152.1 L604.0,49.4"/>
+      <text x="596" y="41" class="note" text-anchor="end">claimed 11% MoM → ₹35.0 Cr</text>
+      <text x="596" y="170" class="note2" text-anchor="end">actual ₹18.7 Cr</text>
+    </svg>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">−0.30% to +0.39%</div>
+      <div class="l">Mean month-on-month change across all 12 tested definitions of recovery</div></div>
+    <div class="stat"><div class="n">₹18.72 → ₹18.72 Cr</div>
+      <div class="l">January versus July. Total change over the period: +0.01%</div></div>
+    <div class="stat"><div class="n">₹2.59 Cr</div>
+      <div class="l">Duplicate payment records inflating reported recovery — 1.93%</div></div>
+  </div>
+</div>
+
+<div class="strip"><div class="s"><div class="sl">Contact rate</div><svg viewBox="0 0 132 30" preserveAspectRatio="none" class="spk"><polyline points="0.0,13.3 22.0,9.6 44.0,20.4 66.0,16.5 88.0,13.7 110.0,19.9 132.0,15.6"/></svg><div class="sv">20.06%<span class="sd">-0.94%</span></div></div><div class="s"><div class="sl">Right-party contact</div><svg viewBox="0 0 132 30" preserveAspectRatio="none" class="spk"><polyline points="0.0,20.4 22.0,20.0 44.0,9.6 66.0,19.9 88.0,9.9 110.0,13.8 132.0,12.1"/></svg><div class="sv">66.54%<span class="sd">+1.57%</span></div></div><div class="s"><div class="sl">PTP rate</div><svg viewBox="0 0 132 30" preserveAspectRatio="none" class="spk"><polyline points="0.0,9.6 22.0,16.3 44.0,13.5 66.0,13.4 88.0,17.5 110.0,16.3 132.0,20.4"/></svg><div class="sv">21.64%<span class="sd">-6.64%</span></div></div><div class="s"><div class="sl">PTP kept rate</div><svg viewBox="0 0 132 30" preserveAspectRatio="none" class="spk"><polyline points="0.0,20.4 22.0,9.6 44.0,16.0 66.0,11.8 88.0,11.5 110.0,15.9 132.0,16.8"/></svg><div class="sv">24.56%<span class="sd">+2.04%</span></div></div><div class="s"><div class="sl">Recovery rate</div><svg viewBox="0 0 132 30" preserveAspectRatio="none" class="spk"><polyline points="0.0,13.2 22.0,20.4 44.0,9.6 66.0,15.1 88.0,17.2 110.0,16.3 132.0,17.5"/></svg><div class="sv">12.06%<span class="sd">-2.03%</span></div></div><div class="s"><div class="sl">Per agent-hour</div><svg viewBox="0 0 132 30" preserveAspectRatio="none" class="spk"><polyline points="0.0,12.5 22.0,20.4 44.0,10.1 66.0,15.9 88.0,9.6 110.0,16.9 132.0,12.8"/></svg><div class="sv">Rs 16,748<span class="sd">-0.15%</span></div></div></div>
+
+<div class="foot">
+  <div>
+    <h2>What we are confident about</h2>
+    <p>Seven of nine operating metrics are flat. One — PTP rate — is down 6.6%.
+    Two cannot be measured at all.</p>
+    <p>No variable in the data predicts recovery. Correlations with collections activity
+    run between −0.002 and +0.009. Agent performance varies <b>0.98×</b> what chance alone
+    would produce.</p>
+  </div>
+  <div>
+    <h2>Recommendation on the ₹10 Cr</h2>
+    <p><b>Do not deploy it into any of the six options yet.</b> No cost field exists anywhere
+    in the source systems, so ROI and break-even cannot be computed for any of them.</p>
+    <p>Commit <b>₹50–75 lakh</b> — under 8% — to a six-arm randomised test over 12 weeks,
+    then deploy the remainder against the result.</p>
+  </div>
+</div>
+
+</div></body></html>
